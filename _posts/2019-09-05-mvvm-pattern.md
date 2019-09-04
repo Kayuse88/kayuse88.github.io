@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '아키텍쳐 패턴에 대한 결정: MVC, MVP, MVVM'
-categories: 디자인패턴, MVVM
+categories: 디자인패턴 MVVM
 ---
 
 WPF를 개발하려고 도전하는 분들은 한 번쯤 MVVM이란 말을 들어봤을 겁니다. 최근에는 안드로이드와 iOS개발에서도 많이 유행하고 있지만, MVVM 패턴을 제대로 구현한 프레임워크는 WPF가 최초입니다.
