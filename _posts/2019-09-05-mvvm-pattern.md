@@ -1,6 +1,7 @@
 ---
 layout: post
 title: '아키텍쳐 패턴에 대한 결정: MVC, MVP, MVVM'
+featured-img: emile-perron-190221
 categories: 디자인패턴 MVVM
 ---
 
@@ -14,6 +15,10 @@ WPF를 개발하려고 도전하는 분들은 한 번쯤 MVVM이란 말을 들�
 
 ## MVC (Model-View-Controller)
 
+![MVC Pattern][mvc]
+
+[mvc]: /assets/img/posts/MvcPattern.png "MVC Pattern"
+
 MVC패턴은 70년대에 그 개념이 정립되었을 만큼 오래된 고전적인 패턴입니다. 획기적인 개발은 잘 했지만 상용화는 못하기로 유명한 제록스 연구소에서 개발되었습니다. MFC를 이용한 개발이 대세였을 때 많이 쓰였으며, 최근까지도 모바일 및 웹에서 쓰고 있습니다.
 
 Model은 데이터를 담당합니다.
@@ -24,14 +29,26 @@ Controller는 MVC의 특징으로 사용자의 입력을 받아 처리하기도 
 
 ## MVP (Model-View-Presenter)
 
+![MVP Pattern][mvp]
+
+[mvp]: /assets/img/posts/MvpPattern.png "MVP Pattern"
+
 Presenter는 Contoller와 비슷한 역할을 하는 것처럼 보이지만, Controller가 하는 것보다는 중재자의 역할에 가깝습니다. 뷰와 모델은 서로를 알지 못하고 프레젠터를 통해 한다리 건너서 상호작용을 하게 됩니다.
 프레젠터는 컨트롤러와 다르게 뷰의 내용을 직접적으로 참조하지 않고 대신 간접적으로 명령만 내리게 됩니다. 따라서 UI 종속적인 코드가 제거되기 때문에 테스트가 훨씬 용이합니다.
 
 ## MVVM (Model-View-ViewModel)
 
+![MVVM Pattern][mvvm]
+
+[mvvm]: /assets/img/posts/MvvmPattern.png "MVVM Pattern"
+
 ViewModel은 View의 추상화 계층입니다. 뷰모델은 뷰를 알지 못하고 단지 Notify만 하게 됩니다. 등록된 뷰가 이를 확인하고 스스로 결과를 반영하여 사용자에게 보여줍니다.
 
 MVVM이 MVP에 비해 갖는 장점은 여기에 있습니다. 프레젠터는 UI 종속적인 코드를 제거했지만 결국 뷰 자체를 참조해야만 합니다. 그렇기 때문에 플랫폼에 종속적인 구조를 가질 수 밖에 없습니다. 하지만 뷰모델은 아예 뷰를 참조할 필요가 없이 그냥 자신이 할 일만 하면 됩니다.
+
+![.NET 5 Platform][net5]
+
+[net5]: /assets/img/posts/dotnet5_platform.png ".NET 5"
 
 이런 방식으로 구조를 설계하면 하나의 뷰모델에 다양한 뷰를 사용할 수 있습니다. 즉 .NET에서 추구하는 멀티플랫폼에 적합한 구조라고 할 수 있습니다. MS에서는 .NET을 통해 모바일, 콘솔, 데스크톱, 웹, TV, HMD 등 다양한 사용자 환경을 통합하려 합니다. 만약 이런 환경별로 개별적으로 개발하고 테스트한다면 많은 리소스가 요구되겠지만, MVVM패턴으로 동일한 뷰모델을 사용하고 단지 기기별로 다른 뷰만 사용하면 훨씬 개발이 편리해지겠습니다.
 
@@ -48,3 +65,4 @@ MVVM이 MVP에 비해 갖는 장점은 여기에 있습니다. 프레젠터는 U
 <https://msdn.microsoft.com/en-us/magazine/dd419663.aspx>
 <https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter>
 <https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel>
+<https://devblogs.microsoft.com/dotnet/introducing-net-5/>
