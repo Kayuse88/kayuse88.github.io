@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MVVM이란 무엇인가? 디자인 패턴 비교
+title: MVVM이란 무엇인가?
 featured-img: emile-perron-190221
 categories: 디자인패턴 MVVM
 ---
@@ -63,6 +63,6 @@ MVVM이 MVP에 비해 갖는 장점은 여기에 있습니다. 프레젠터는 U
 
 ### Reference
 
-><https://msdn.microsoft.com/en-us/magazine/dd419663.aspx>
-><https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter>
-><https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel>
+<https://msdn.microsoft.com/en-us/magazine/dd419663.aspx>
+<https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter>
+<https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel>
