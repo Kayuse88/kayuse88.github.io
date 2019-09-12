@@ -16,7 +16,7 @@ WPF개발 환경에서 3가지 디자인 패턴의 비교를 해보겠습니다.
 틱택토 게임은 오목과 유사한 게임으로 3x3 사이즈의 판에 가장 먼저 한 줄을 만드는 사람이 승리합니다.  
 규칙이 간단하고, 9개의 칸만 만들 수 있으면 어디서나 할 수 있다는 것이 장점입니다.
 
-![TicTacToe](/assets/img/posts/2019-09-12-mvvm-example/tictactoe.png)
+![TicTacToe](/assets/img/posts/mvvm-example/tictactoe.png)
 
 해당 예시는 MVVM의 이해를 돕기 위해 WPF로 제작되었습니다.  
 소스 코드는 <https://github.com/Kayuse88/wpf-TicTacToe-example>에서 확인할 수 있습니다.  
@@ -26,7 +26,7 @@ MVC, MVP, MVVM에 대한 자세한 설명은 [이전 포스트](https://kayuse88
 
 MVC패턴은 고전적인 디자인 방법으로 Model, View, Controller로 구성되어 있습니다.
 
-![틱택토MVC](/assets/img/posts/2019-09-12-mvvm-example/tictactoemvc.png)
+![틱택토MVC](/assets/img/posts/mvvm-example/tictactoemvc.png)
 
 ### Model
 
@@ -146,7 +146,7 @@ MVC패턴의 문제점을 해결하기 위해 MVP 패턴을 보겠습니다.
 
 MVP 패턴은 컨트롤러를 프레젠터로 대체했습니다. 뷰와 프레젠터는 각각 ITicTacToeView와 ITicTacToePresenter라는 인터페이스를 통해 서로 참조하게 됩니다. 클래스의 직접 참조 대신 인터페이스를 사용하는 이유는 여기서는 간단하게 결합도를 낮추고 OOP의 다형성을 위해서라고만 설명하겠습니다.
 
-![틱택토MVP](/assets/img/posts/2019-09-12-mvvm-example/tictactoemvp.png)
+![틱택토MVP](/assets/img/posts/mvvm-example/tictactoemvp.png)
 
 ### MVP - View
 
@@ -216,7 +216,7 @@ namespace TicTacToeExample.Presenter
 
 WPF에서 MVVM은 데이터바인딩으로 구현하게 됩니다. 데이터 바인딩은 WPF의 존재 이유라고 봐도 무방할 정도입니다. 물론 데이터바인딩이 WPF의 전유물은 아닙니다. 안드로이드에서도 데이터 바인딩 라이브러리가 추가되어 사용하는 것으로 알고 있습니다. .NET의 크로스플랫폼 프레임워크인 자마린도 MVVM을 적극 지향하고 있습니다.
 
-![틱택토mvvm](/assets/img/posts/2019-09-12-mvvm-example/tictactoemvvm.png)
+![틱택토mvvm](/assets/img/posts/mvvm-example/tictactoemvvm.png)
 
 ### MVVM - View
 

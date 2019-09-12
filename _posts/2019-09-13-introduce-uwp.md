@@ -2,7 +2,7 @@
 layout: post
 title: Universal Windows Platform이란?
 featured-img: universalapps-overview
-categories: 디자인패턴 MVVM WPF
+categories: UWP
 ---
 
 
