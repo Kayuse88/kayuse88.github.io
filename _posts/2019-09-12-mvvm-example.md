@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 예시로 알아보는 MVC vs MVP vs MVVM
-featured-img: tictactoe.png
+featured-img: tictactoe
 categories: 디자인패턴 MVVM WPF
 ---
 
@@ -19,7 +19,7 @@ WPF개발 환경에서 3가지 디자인 패턴의 비교를 해보겠습니다.
 ![TicTacToe](/assets/img/posts/tictactoe.png)
 
 해당 예시는 MVVM의 이해를 돕기 위해 WPF로 제작되었습니다.  
-소스 코드는 <https://github.com/kayuse88>에서 확인할 수 있습니다.  
+소스 코드는 <https://github.com/Kayuse88/wpf-TicTacToe-example>에서 확인할 수 있습니다.  
 MVC, MVP, MVVM에 대한 자세한 설명은 [이전 포스트](https://kayuse88.github.io/mvvm-pattern)를 참고해주세요.
 
 ## MVC
