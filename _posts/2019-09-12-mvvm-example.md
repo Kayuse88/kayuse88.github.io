@@ -47,7 +47,7 @@ MVC 패턴에서 뷰는 모델의 내용을 알지 못하고 컨트롤러가 뷰
 컨트롤러는 뷰와 모델을 접착시키는 접착제의 역할을 합니다. 예시에서는 별도의 컨트롤러를 만들지 않고 XAML.cs를 컨트롤러로 사용했습니다. 엄밀히 말하면 XAML의 cs파일은 Partial class라고 해서 XAML부분과 결합하여 하나의 클래스가 됩니다. 뷰랑 컨트롤러가 하나의 클래스에 혼재한다고 보면 되지만 구현의 편의를 위해 마치 별도의 컨트롤러인 것처럼 취급합니다.  
 코드를 직접 살펴보겠습니다.
 
-```csharp
+```cs
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -126,7 +126,7 @@ namespace TicTacToeExample.View
 
 컨트롤러가 뷰의 입력을 받는 것은 이벤트 핸들러를 통해 이루어집니다. 안드로이드에서 OnClickListener를 사용해 봤다면 이해가 쉽습니다. WPF에선 이벤트 핸들러의 지정을 코드상에서 할 수도 있지만 UI 관련된 이벤트는 보통 XAML에서 직접 지정하는 편입니다. 따라서 setOnClickListener와 같은 역할은 누가 하는지 헷갈리실 필요는 없습니다.
 
-```html
+```xaml
 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15" Width="100" Content="{x:Static string:MainUI.Reset}" Click="ResetButton_Click"/>
 ```
 
@@ -156,7 +156,7 @@ XAML.cs는 컨트롤러의 역할을 버리고 이제 뷰의 완전한 일부가
 
 컨트롤러와 상당히 유사한 구조지만, 프레젠터는 뷰를 직접적으로 갱신하지 않습니다. 대신 인터페이스를 통해 뷰에게 갱신을 요청하게 됩니다.
 
-```csharp
+```cs
 using TicTacToeExample.Model;
 using static TicTacToeExample.Model.Players;
 
@@ -222,7 +222,7 @@ WPF에서 MVVM은 데이터바인딩으로 구현하게 됩니다. 데이터 바
 
 MVVM의 특징은 뷰의 비하인드 코드가 거의 존재하지 않는다는 점입니다.
 
-```csharp
+```cs
 using System.Windows.Controls;
 
 namespace TicTacToeExample.View
@@ -242,7 +242,7 @@ namespace TicTacToeExample.View
 
 뷰의 비하인드 코드는 기본 생성되는 초기화 코드밖에 없습니다. 처음 MVVM을 접하면 가장 당황하게 되는 것이 이 부분일 겁니다. 아무 코드가 없는데 어떻게 뷰가 갱신되고 입력이 전달될까?하는 생각이 들게 됩니다. 해답은 뷰의 XAML 구현부에 있습니다.
 
-```html
+```xaml
     <Page.DataContext>
         <viewmodel:MvvmViewModel/>
     </Page.DataContext>
@@ -280,7 +280,7 @@ ViewModelBase는 해당 인터페이스를 구현한 구현체입니다. 이 클
 
 뷰모델은 추상화된 뷰입니다. 세부적인 뷰의 표현 방식만 없지 뷰에 표시되어야 하는 내용, 입력값에 대한 반응 등 추상적인 개념은 모두 포함되어 있습니다. 뷰는 뷰모델을 각각의 화면에 맞게 표현만 해주면 됩니다.
 
-```csharp
+```cs
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
