@@ -2,7 +2,6 @@
 title: 기술 저장소 # your site title
 author: 강윤석 # You :P
 description: > # Meta description of Homepage
-  개발 지식을 커밋하는 곳
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kayuse88.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -20,7 +19,7 @@ navigation: # Navigation links
 #  - {name: 'Contact', link: '/contact'}
 
 tagline: >
-#  Modern Jekyll theme focused on speed performance &amp; SEO best practices
+  개발 지식을 커밋하는 곳
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
