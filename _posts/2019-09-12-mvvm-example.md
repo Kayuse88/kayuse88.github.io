@@ -16,7 +16,7 @@ WPF개발 환경에서 3가지 디자인 패턴의 비교를 해보겠습니다.
 틱택토 게임은 오목과 유사한 게임으로 3x3 사이즈의 판에 가장 먼저 한 줄을 만드는 사람이 승리합니다.  
 규칙이 간단하고, 9개의 칸만 만들 수 있으면 어디서나 할 수 있다는 것이 장점입니다.
 
-![TicTacToe](/assets/img/posts/tictactoe.png)
+![TicTacToe](/assets/img/posts/2019-09-12-mvvm-example/tictactoe.png)
 
 해당 예시는 MVVM의 이해를 돕기 위해 WPF로 제작되었습니다.  
 소스 코드는 <https://github.com/Kayuse88/wpf-TicTacToe-example>에서 확인할 수 있습니다.  
@@ -26,7 +26,7 @@ MVC, MVP, MVVM에 대한 자세한 설명은 [이전 포스트](https://kayuse88
 
 MVC패턴은 고전적인 디자인 방법으로 Model, View, Controller로 구성되어 있습니다.
 
-![틱택토MVC](/assets/img/posts/tictactoemvc.png)
+![틱택토MVC](/assets/img/posts/2019-09-12-mvvm-example/tictactoemvc.png)
 
 ### Model
 
@@ -146,7 +146,7 @@ MVC패턴의 문제점을 해결하기 위해 MVP 패턴을 보겠습니다.
 
 MVP 패턴은 컨트롤러를 프레젠터로 대체했습니다. 뷰와 프레젠터는 각각 ITicTacToeView와 ITicTacToePresenter라는 인터페이스를 통해 서로 참조하게 됩니다. 클래스의 직접 참조 대신 인터페이스를 사용하는 이유는 여기서는 간단하게 결합도를 낮추고 OOP의 다형성을 위해서라고만 설명하겠습니다.
 
-![틱택토MVP](/assets/img/posts/tictactoemvp.png)
+![틱택토MVP](/assets/img/posts/2019-09-12-mvvm-example/tictactoemvp.png)
 
 ### MVP - View
 
@@ -216,7 +216,7 @@ namespace TicTacToeExample.Presenter
 
 WPF에서 MVVM은 데이터바인딩으로 구현하게 됩니다. 데이터 바인딩은 WPF의 존재 이유라고 봐도 무방할 정도입니다. 물론 데이터바인딩이 WPF의 전유물은 아닙니다. 안드로이드에서도 데이터 바인딩 라이브러리가 추가되어 사용하는 것으로 알고 있습니다. .NET의 크로스플랫폼 프레임워크인 자마린도 MVVM을 적극 지향하고 있습니다.
 
-![틱택토mvvm](/assets/img/posts/tictactoemvvm.png)
+![틱택토mvvm](/assets/img/posts/2019-09-12-mvvm-example/tictactoemvvm.png)
 
 ### MVVM - View
 
@@ -397,7 +397,7 @@ namespace TicTacToeExample.ViewModel
 ```
 
 뷰모델은 뷰에 대한 참조가 전혀 없습니다. 함수들도 단위 테스트에 편리하게 구현되어 있습니다. TDD에 있어 매우 유리한 구조입니다.  
-ICommand란 인터페이스가 보이는 데 이것은 MVC,MVP의 뷰에서 Click 이벤트에 반응하던 핸들러와 유사한 것입니다. 뷰모델은 추상화된 뷰이기 때문에 직접적인 이벤트 핸들러를 포함하지 않지만 추상화된 핸들러로서 ICommand를 가지고 있습니다. 이를 구현한 RoutedCommand란 클래스가 WPF에 기본으로 포함되어 있지만 복잡하기 때문에 보통은 MVVM 프레임워크의 것을 사용하는 경우가 많습니다.
+ICommand란 인터페이스가 보이는 데 이것은 MVC, MVP의 뷰에서 Click 이벤트에 반응하던 핸들러와 유사한 것입니다. 뷰모델은 추상화된 뷰이기 때문에 직접적인 이벤트 핸들러를 포함하지 않지만 추상화된 핸들러로서 ICommand를 가지고 있습니다. 이를 구현한 RoutedCommand란 클래스가 WPF에 기본으로 포함되어 있지만 복잡하기 때문에 보통은 MVVM 프레임워크의 것을 사용하는 경우가 많습니다.
 
 뷰모델은 추상화된 뷰이기 때문에 하나의 뷰모델을 여러 뷰가 바인딩해서 사용할 수 있습니다. 원소스 멀티플랫폼인데 자마린 같은 크로스플랫폼 개발 방식에 적합해 보입니다.
 
