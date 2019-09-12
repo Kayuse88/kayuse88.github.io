@@ -126,7 +126,7 @@ namespace TicTacToeExample.View
 
 컨트롤러가 뷰의 입력을 받는 것은 이벤트 핸들러를 통해 이루어집니다. 안드로이드에서 OnClickListener를 사용해 봤다면 이해가 쉽습니다. WPF에선 이벤트 핸들러의 지정을 코드상에서 할 수도 있지만 UI 관련된 이벤트는 보통 XAML에서 직접 지정하는 편입니다. 따라서 setOnClickListener와 같은 역할은 누가 하는지 헷갈리실 필요는 없습니다.
 
-```xaml
+```xml
 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15" Width="100" Content="{x:Static string:MainUI.Reset}" Click="ResetButton_Click"/>
 ```
 
@@ -242,7 +242,7 @@ namespace TicTacToeExample.View
 
 뷰의 비하인드 코드는 기본 생성되는 초기화 코드밖에 없습니다. 처음 MVVM을 접하면 가장 당황하게 되는 것이 이 부분일 겁니다. 아무 코드가 없는데 어떻게 뷰가 갱신되고 입력이 전달될까?하는 생각이 들게 됩니다. 해답은 뷰의 XAML 구현부에 있습니다.
 
-```xaml
+```xml
     <Page.DataContext>
         <viewmodel:MvvmViewModel/>
     </Page.DataContext>
