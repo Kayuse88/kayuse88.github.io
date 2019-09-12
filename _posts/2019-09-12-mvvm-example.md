@@ -1,14 +1,15 @@
 ---
 layout: post
 title: 예시로 알아보는 MVC vs MVP vs MVVM
-featured-img: tictactoe
+featured-img: tictactoe.png
 categories: 디자인패턴 MVVM WPF
 ---
 
 >이 포스트는 Eric Maxwell의 [MVC vs. MVP vs. MVVM on Android](https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)를 참고하여 작성했습니다.
 
-MVC, MVP, MVVM같은 디자인 패턴에 대한 이야기를 듣는 다면 한 번에 쉽게 이해되지 않습니다.  
-그럴 때는 직접 예시를 보는게 가장 빠른 방법입니다.
+MVC, MVP, MVVM같은 디자인 패턴에 대한 설명을 듣는 다면 한 번에 쉽게 이해되지 않습니다.  
+그럴 때는 직접 예시를 보는게 가장 빠른 방법입니다.  
+WPF개발 환경에서 3가지 디자인 패턴의 비교를 해보겠습니다.
 
 ## TicTacToe
 
@@ -17,9 +18,9 @@ MVC, MVP, MVVM같은 디자인 패턴에 대한 이야기를 듣는 다면 한 �
 
 ![TicTacToe](/assets/img/posts/tictactoe.png)
 
-해당 예시는 MVVM의 이해를 돕기 위해 WPF로 제작되었습니다. 소스 코드는 <https://github.com/kayuse88>에서 확인할 수 있습니다.
-
-MVC, MVP, MVVM에 대한 자세한 설명은 [이전 포스트](2019-09-05-mvvm-pattern.md)를 참고해주세요.
+해당 예시는 MVVM의 이해를 돕기 위해 WPF로 제작되었습니다.  
+소스 코드는 <https://github.com/kayuse88>에서 확인할 수 있습니다.  
+MVC, MVP, MVVM에 대한 자세한 설명은 [이전 포스트](https://kayuse88.github.io/mvvm-pattern)를 참고해주세요.
 
 ## MVC
 
@@ -46,7 +47,7 @@ MVC 패턴에서 뷰는 모델의 내용을 알지 못하고 컨트롤러가 뷰
 컨트롤러는 뷰와 모델을 접착시키는 접착제의 역할을 합니다. 예시에서는 별도의 컨트롤러를 만들지 않고 XAML.cs를 컨트롤러로 사용했습니다. 엄밀히 말하면 XAML의 cs파일은 Partial class라고 해서 XAML부분과 결합하여 하나의 클래스가 됩니다. 뷰랑 컨트롤러가 하나의 클래스에 혼재한다고 보면 되지만 구현의 편의를 위해 마치 별도의 컨트롤러인 것처럼 취급합니다.  
 코드를 직접 살펴보겠습니다.
 
-```cs
+```csharp
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -155,7 +156,7 @@ XAML.cs는 컨트롤러의 역할을 버리고 이제 뷰의 완전한 일부가
 
 컨트롤러와 상당히 유사한 구조지만, 프레젠터는 뷰를 직접적으로 갱신하지 않습니다. 대신 인터페이스를 통해 뷰에게 갱신을 요청하게 됩니다.
 
-```cs
+```csharp
 using TicTacToeExample.Model;
 using static TicTacToeExample.Model.Players;
 
@@ -221,7 +222,7 @@ WPF에서 MVVM은 데이터바인딩으로 구현하게 됩니다. 데이터 바
 
 MVVM의 특징은 뷰의 비하인드 코드가 거의 존재하지 않는다는 점입니다.
 
-```cs
+```csharp
 using System.Windows.Controls;
 
 namespace TicTacToeExample.View
@@ -279,7 +280,7 @@ ViewModelBase는 해당 인터페이스를 구현한 구현체입니다. 이 클
 
 뷰모델은 추상화된 뷰입니다. 세부적인 뷰의 표현 방식만 없지 뷰에 표시되어야 하는 내용, 입력값에 대한 반응 등 추상적인 개념은 모두 포함되어 있습니다. 뷰는 뷰모델을 각각의 화면에 맞게 표현만 해주면 됩니다.
 
-```cs
+```csharp
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
