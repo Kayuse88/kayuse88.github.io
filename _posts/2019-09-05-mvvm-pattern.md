@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MVVM이란 무엇인가?
-featured-img: emile-perron-190221
+# featured-img: emile-perron-190221
 categories: 디자인패턴 MVVM
 ---
 
