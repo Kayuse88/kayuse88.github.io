@@ -3,7 +3,7 @@ title: 기술 저장소 # your site title
 author: 강윤석 # You :P
 description: > # Meta description of Homepage
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://kayuse88.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://kayuse88.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:
