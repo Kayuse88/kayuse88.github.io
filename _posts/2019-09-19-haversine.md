@@ -27,7 +27,7 @@ categories: 알고리즘 수학
 
 두 좌표 (x1, y1), (x2, y2)가 있을 때 두 지점 사이의 거리는 x좌표의 차이의 제곱과 y좌표의 차이의 제곱의 합에 대한 제곱근으로 구합니다.
 
-그러나 지구는 둥글기 때문에 위도(Latitude)와 경도(Longitude)를 이런 방법을 써서 구하면 큰 오차가 생기게 됩니다. 매우 짧은 거리야 이런 식으로 계산해도 상관없지만 길이가 길어질수록 지구 곡률의 영향을 받게 됩니다. 두 지표점 사이의 거리는 3차원 공간 상에서 보면 직선이 아닌 호(Arc)의 모양이기 때문입니다. 가장 대표적인 예시로 비행기가 최단 거리로 가는 경로는 2차원 평면 도법 상의 직선거리가 아닌 비스듬한 거리입니다.
+그러나 지구는 둥글기 때문에 위도(Latitude)와 경도(Longitude)로 이런 방법을 써서 구하면 큰 오차가 생기게 됩니다. 매우 짧은 거리야 이런 식으로 계산해도 상관없지만 길이가 길어질수록 지구 곡률의 영향을 받게 됩니다. 두 지표점 사이의 거리는 3차원 공간 상에서 보면 직선이 아닌 호(Arc)의 모양이기 때문입니다. 가장 대표적인 예시로 비행기가 최단 거리로 가는 경로는 2차원 평면 도법 상의 직선거리가 아닌 비스듬한 거리입니다.
 
 ![Great Circle](/assets/img/posts/haversine/RhumbLine-GreatCircle.png)
 > 선의 길이는 직선이 더 짧지만 실제 거리는 원호로 표시된 경로가 더 짧습니다.
@@ -64,23 +64,23 @@ hav(Θ)는 하버사인 함수로 다음과 같이 표현됩니다.
 
 ```java
 public static double distanceInKilometerByHaversine(double x1, double y1, double x2, double y2) {
-        double distance;
-        double radius = 6371; // 지구 반지름(km)
-        double toRadian = Math.PI / 180;
+    double distance;
+    double radius = 6371; // 지구 반지름(km)
+    double toRadian = Math.PI / 180;
 
-        double deltaLatitude = Math.abs(x1 - x2) * toRadian;
-        double deltaLongitude = Math.abs(y1 - y2) * toRadian;
+    double deltaLatitude = Math.abs(x1 - x2) * toRadian;
+    double deltaLongitude = Math.abs(y1 - y2) * toRadian;
 
-        double sinDeltaLat = Math.sin(deltaLatitude / 2);
-        double sinDeltaLng = Math.sin(deltaLongitude / 2);
-        double squareRoot = Math.sqrt(
-            sinDeltaLat * sinDeltaLat +
-            Math.cos(x1 * toRadian) * Math.cos(x2 * toRadian) * sinDeltaLng * sinDeltaLng);
+    double sinDeltaLat = Math.sin(deltaLatitude / 2);
+    double sinDeltaLng = Math.sin(deltaLongitude / 2);
+    double squareRoot = Math.sqrt(
+        sinDeltaLat * sinDeltaLat +
+        Math.cos(x1 * toRadian) * Math.cos(x2 * toRadian) * sinDeltaLng * sinDeltaLng);
 
-        distance = 2 * radius * Math.asin(squareRoot);
+    distance = 2 * radius * Math.asin(squareRoot);
 
-        return distance;
-    }
+    return distance;
+}
 ```
 
 어느 언어로 구현하나 큰 차이는 없습니다.  
