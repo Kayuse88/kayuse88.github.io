@@ -49,7 +49,6 @@ MVVM이 MVP에 비해 갖는 장점은 여기에 있습니다. 프레젠터는 U
 ![.NET 5 Platform][net5]
 
 [net5]: /assets/img/posts/mvvm-pattern/dotnet5_platform.png ".NET 5"
-이미지 출처: <https://devblogs.microsoft.com/dotnet/introducing-net-5>
 
 이런 방식으로 구조를 설계하면 하나의 뷰모델에 다양한 뷰를 사용할 수 있습니다. 즉 .NET에서 추구하는 멀티플랫폼에 적합한 구조라고 할 수 있습니다. MS에서는 .NET을 통해 모바일, 콘솔, 데스크톱, 웹, TV, HMD 등 다양한 사용자 환경을 통합하려 합니다. 만약 이런 환경별로 개별적으로 개발하고 테스트한다면 많은 리소스가 요구되겠지만, MVVM 패턴으로 동일한 뷰모델을 사용하고 단지 기기별로 다른 뷰만 사용하면 훨씬 개발이 편리해지겠습니다.
 
@@ -66,3 +65,4 @@ MVVM이 MVP에 비해 갖는 장점은 여기에 있습니다. 프레젠터는 U
 <https://msdn.microsoft.com/en-us/magazine/dd419663.aspx>
 <https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter>
 <https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel>
+<https://devblogs.microsoft.com/dotnet/introducing-net-5>
