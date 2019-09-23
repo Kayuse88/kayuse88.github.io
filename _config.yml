@@ -2,6 +2,7 @@
 title: 기술 저장소 # your site title
 author: 강윤석 # You :P
 description: > # Meta description of Homepage
+  .NET 및 여러 개발 관련 경험 및 지식을 생각나는 대로 업로드 하는 블로그.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kayuse88.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
