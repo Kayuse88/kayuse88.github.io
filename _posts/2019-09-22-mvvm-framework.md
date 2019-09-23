@@ -55,7 +55,7 @@ Caliburn.Micro의 특징은 극도의 편리함입니다.
 ![MVVMLight](/assets/img/posts/mvvm-framework/prismlibrary.png)
 > 공식 홈페이지: <https://prismlibrary.github.io>
 
-Prism Library는 .NET Foundation의 관리하에 진행되는 프로젝트입니다. .NET Foundation은 그동안 마이크로소프트가 관리했던 .NET을 좀 더 오픈소스 친화적으로 만들고자 별도의 조직입니다. .NET Core, 자마린, ASP.NET, ReactiveX(Rx) 등도 이 곳에서 관리됩니다.
+Prism Library는 .NET Foundation의 관리하에 진행되는 프로젝트입니다. .NET Foundation은 그동안 마이크로소프트가 관리했던 .NET을 좀 더 오픈소스 친화적으로 만들고자 설립한 별도의 조직입니다. .NET Core, 자마린, ASP.NET, ReactiveX(Rx) 등도 이 곳에서 관리됩니다.
 
 Prism은 다른 프레임워크에 비해 상당히 크고 무겁습니다. Enterprise 환경을 염두해 두고 만들었기 때문이며 기능도 상당히 풍부한 편입니다. 실제로 해외에는 Prism 라이브러리를 이용한 상용 WPF 솔루션이 상당히 존재합니다. Prism의 특징은 모듈화가 간편하다는 점입니다. 작은 Prism 모듈들을 조합하여 하나의 큰 솔루션을 만드는 형태입니다. 이러한 모듈을 하나에 모으기 위한 카달로그란 개념이 존재합니다. 그 밖에 Region, Composite Command 등 Prism만의 독특한 개념이 존재하기 때문에 배우기 까다로운 편입니다.
 
