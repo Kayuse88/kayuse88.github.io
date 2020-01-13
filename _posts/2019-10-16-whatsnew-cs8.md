@@ -168,7 +168,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
             file.WriteLine(line);
         }
     }
-// file is disposed here
+    // file is disposed here
 }
 ```
 
@@ -188,7 +188,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-위의 두 구문은 같은 것으로 해석됩니다. StreamWriter는 IDisposable을 구현하여 Unmanaged 자원을 다루기 때문에 해제가 필수입니다. 위와 같이 선언하면 자동으로 해제되기 때문에 편리합니다.
+첫 번째 구문처럼 구현하면 함수 스택이 해제될 때 자원이 같이 해제되지만, 두 번째 구문처럼 괄호를 이용하면 괄호가 끝날 때 해제되는 차이가 있습니다. StreamWriter는 IDisposable을 구현하여 Unmanaged 자원을 다루기 때문에 해제가 필수입니다. 위와 같이 선언하면 자동으로 해제되기 때문에 편리합니다.
 
 ## static 로컬 함수
 
