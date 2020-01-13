@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 공통 최장 문자열 찾기
-featured-img: lgsmatrix
+featured-img: lgsmatrix.png
 categories: 알고리즘
 ---
 

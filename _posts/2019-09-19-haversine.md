@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 최단거리 구하기, 하버사인 공식(Haversine Formula)
-featured-img: measuredistance
+featured-img: measuredistance.png
 categories: 알고리즘 수학
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Xaml MVVM 프레임워크 소개
-featured-img: prismlibrary
+featured-img: prismlibrary.png
 categories: MVVM
 ---
 

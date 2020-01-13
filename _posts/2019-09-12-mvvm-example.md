@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 예시로 알아보는 MVC vs MVP vs MVVM
-featured-img: tictactoe
+featured-img: tictactoe.png
 categories: 디자인패턴 MVVM WPF
 ---
 

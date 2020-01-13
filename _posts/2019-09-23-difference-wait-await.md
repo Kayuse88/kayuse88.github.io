@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Task.Wait과 await의 차이점
-# featured-img:
+featured-img: bar-1846137_1920.jpg
 categories: C# .NET
 ---
 
 Stack Overflow에서 발견한 흥미로운 질문과 답변입니다.
-
+set
 출처: <https://stackoverflow.com/questions/9519414/whats-the-difference-between-task-start-wait-and-async-await>
 
 .NET 프레임워크 4.5 버전 이후에서는 비동기 프로그래밍을 쉽게 할 수 있도록 async/await 연산자를 사용할 수 있습니다.

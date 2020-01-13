@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C# 8.0 무엇이 달라졌을까
-featured-img: cs8logo
+featured-img: cs8logo.png
 categories: C#
 ---
 

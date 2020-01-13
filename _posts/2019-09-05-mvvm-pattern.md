@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MVVM이란 무엇인가?
-featured-img: msdn-mvvm-pattern
+featured-img: msdn-mvvm-pattern.png
 categories: 디자인패턴 MVVM
 ---
 

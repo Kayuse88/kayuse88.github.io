@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Universal Windows Platform이란?
-featured-img: universalapps-overview
+featured-img: universalapps-overview.png
 categories: UWP
 ---
 
