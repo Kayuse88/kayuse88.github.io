@@ -70,7 +70,8 @@ xUnit은 NUnit v2 의 개발자가 만든 테스트 프레임워크입니다. �
 
 현재 .NET 환경에서 테스트 프레임워크를 사용해야한다면 단연 추천하는 프레임워크입니다. xUnit의 장점은 무수히 많습니다.
 
-* Resharper, CodeRush, TestDriven.NET, Xamarin과 같은 현대적인 플러그인, 프레임워크와의 자연스러운 융합(실제로 테스트 러너가 제공되는 Resharper Ultimate가 있다면, 테스트를 수행할 때 xUnit의 테스트 러너를 설치할 필요도 없음)
+* Resharper, CodeRush, TestDriven.NET, Xamarin과 같은 현대적인 플러그인, 프레임워크와의 자연스러운 융합  
+(실제로 테스트 러너가 제공되는 Resharper와 같은 플러그인이 있다면, 테스트를 수행할 때 xUnit의 테스트 러너를 별도로 설치할 필요도 없음)
 * (중요)간결한 테스트 구문으로 테스트 코드 생산성 향상
 * 지속적인 업데이트 및 커뮤니티의 지원
 
