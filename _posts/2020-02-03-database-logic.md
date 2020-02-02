@@ -13,6 +13,28 @@ DB에 저장된 자료를 다루기 위해서는 쿼리를 이용합니다. 어�
 
 하지만 SQL 인젝션과 같은 보안 취약점이 존재하며, 쿼리문을 직접 코드에 삽입하기 때문에 DB 구조가 노출될 위험성이 있습니다. 또한 DB의 종류에 따라 사용하는 방법이 조금씩 다르기 때문에 각각의 DB의 특성과 사용법을 숙지할 필요가 있습니다.
 
+다음은 자바에서 MSSQL 서버에 쿼리 구문을 이용하여 직접 데이터를 가져오는 예제입니다.
+
+```java
+// Create a variable for the connection string.
+String connectionUrl = "jdbc:sqlserver://<server>:<port>;databaseName=AdventureWorks;user=<user>;password=<password>";
+try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
+    String SQL = "SELECT TOP 10 * FROM Person.Contact";
+    ResultSet rs = stmt.executeQuery(SQL);
+
+    // Iterate through the data in the result set and display it.
+    while (rs.next()) {
+        System.out.println(rs.getString("FirstName") + " " + rs.getString("LastName"));
+    }
+}
+// Handle any errors that may have occurred.
+catch (SQLException e) {
+    e.printStackTrace();
+}
+```
+
+> 출처: <https://docs.microsoft.com/en-us/sql/connect/jdbc/connection-url-sample?view=sql-server-ver15>
+
 ## SQL Mapper
 
 SQL Mapper는 DB의 쿼리문을 객체지향 형태의 함수로 맵핑해주는 기술입니다. 코드에서 함수를 호출하면 이에 맵핑된 SQL 쿼리문이 호출되어 DB와의 상호작용을 하게 됩니다. 생짜로 쿼리문을 쓰는 것과 비교했을 때, 코드 자체에 쿼리문이 드러나지 않기에 코드를 깔끔하게 만들 수 있고, 코드와 쿼리를 분리하여 비즈니스 로직과 영속성 부문을 분리할 수 있게 됩니다. 또한 쿼리문을 직접 사용하는게 아니라 보안성 측면에서도 장점이 있습니다.
