@@ -5,11 +5,11 @@ featured-img: Hibernate_logo_a.png
 categories: DB
 ---
 
-DB에 저장된 자료를 다루기 위해서는 쿼리를 이용합니다. 어플리케이션에서도 DB의 자료를 다루기 위해서는 쿼리를 사용해야 합니다. 하지만 단순한 쿼리 외에도 Code 에서 DB를 다루는 몇 가지 방법은 다음과 같습니다.
+DB에 저장된 자료를 다루기 위해서는 쿼리를 이용합니다. 어플리케이션에서도 DB의 자료를 다루기 위해서는 쿼리를 사용해야 합니다. 하지만 단순한 쿼리 외에도 Code에서 DB를 다루는 몇 가지 방법은 다음과 같습니다.
 
 ## SQL Statements
 
-가장 근본적으로 쿼리를 이용해 직접 DB를 다루는 방법입니다. 쿼리문도 문자열이기에 String 타입으로 쿼리 문을 작성 후 이를 DB에 요청하여 결과값을 받아오는 것입니다. 고전적인 방식이지만 쉽고 직관적이며 DB에서 사용한 쿼리를 그래도 사용할 수 있다는 장점이 있습니다.
+가장 근본적으로 쿼리를 이용해 직접 DB를 다루는 방법입니다. 쿼리문도 문자열이기에 String 타입으로 쿼리문을 작성 후 이를 DB에 요청하여 결괏값을 받아오는 것입니다. 고전적인 방식이지만 쉽고 직관적이며 DB에서 사용한 쿼리를 그래도 사용할 수 있다는 장점이 있습니다.
 
 하지만 SQL 인젝션과 같은 보안 취약점이 존재하며, 쿼리문을 직접 코드에 삽입하기 때문에 DB 구조가 노출될 위험성이 있습니다. 또한 DB의 종류에 따라 사용하는 방법이 조금씩 다르기 때문에 각각의 DB의 특성과 사용법을 숙지할 필요가 있습니다.
 
@@ -33,8 +33,6 @@ catch (SQLException e) {
 }
 ```
 
-> 출처: <https://docs.microsoft.com/en-us/sql/connect/jdbc/connection-url-sample?view=sql-server-ver15>
-
 ## SQL Mapper
 
 SQL Mapper는 DB의 쿼리문을 객체지향 형태의 함수로 맵핑해주는 기술입니다. 코드에서 함수를 호출하면 이에 맵핑된 SQL 쿼리문이 호출되어 DB와의 상호작용을 하게 됩니다. 생짜로 쿼리문을 쓰는 것과 비교했을 때, 코드 자체에 쿼리문이 드러나지 않기에 코드를 깔끔하게 만들 수 있고, 코드와 쿼리를 분리하여 비즈니스 로직과 영속성 부문을 분리할 수 있게 됩니다. 또한 쿼리문을 직접 사용하는게 아니라 보안성 측면에서도 장점이 있습니다.
@@ -50,8 +48,6 @@ SQL 매핑 프레임워크로는 JAVA의 Mybatis가 있습니다. Mybatis의 경
   SELECT * FROM PERSON WHERE ID = #{id}
 </select>
 ```
-
-> 출처: <https://mybatis.org/mybatis-3/configuration.html>
 
 ## Stored Procedure
 
@@ -75,8 +71,6 @@ AS
 GO  
 ```
 
-> 출처: <https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/create-a-stored-procedure?view=sql-server-ver15>
-
 ## Object-Relation Mapping
 
 객체관계 맵핑 프레임워크(이하 ORM 프레임워크)은 객체와 RDBMS의 테이블 구조를 맵핑해주는 역할을 합니다. 쉽게 말해서 객체 하나를 DB의 Row처럼 다룰 수 있습니다. 개발자는 맵핑 설정을 한 다음에는 순수하게 비즈니스 로직의 관점에서 데이터를 다루고 영속성과 관련된 부문은 ORM 프레임워크가 처리해줍니다. 개발자가 쿼리를 별도로 작성할 필요가 없으며, DB와 관련된 비즈니스 로직은 모두 코드에서 처리하게 됩니다. 쿼리문은 프레임워크에서 생성해주기 때문에 DB의 종류에 독립적이라는 장점이 있습니다.
@@ -93,8 +87,6 @@ public interface UserRepository extends Repository<User, Long> {
   List<User> findByEmailAddressAndLastname(String emailAddress, String lastname);
 }
 ```
-
-> 출처: <https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods>
 
 ## ORM VS SP
 
@@ -127,3 +119,10 @@ ORM 프레임워크를 사용한다고 해서 DB에 대한 지식이 소홀해�
 예전에는 프로시저 방식의 개발을 많이 수행했으며, 금융권 쪽과 같은 몇몇 분야에서는 아직도 이런 식으로의 개발을 많이 하고 있습니다. 하지만 개발 환경에서 협업의 중요성이 날이 갈수록 중요해지고 있기에 협업 환경에 불리한 프로시저 방식은 잘 사용되지 않습니다.
 
 데이터베이스는 매우 비싼 자원입니다. 수평적 확장이 쉬운 서버 쪽 자원에 비해, DB는 스케일 아웃이 힘듭니다. 로직을 데이터베이스 자체에 넣을 경우, DB의 부하가 매우 커지게 되며, 병목 현상이 발생하거나 DB가 뻗을 가능성이 커집니다. DB를 잘 튜닝하거나 쿼리를 최적화하여 한 번에 로직을 실행시켜 빠르게 원하는 값을 얻을 수 있다면, ORM을 이용하여 많은 DB 트랜잭션을 만드는 것보다 좋을 수도 있습니다. 좋은 개발자, DBA라면 서비스에 적합한 요소를 고려하여 기술을 선택하는 것이 현명할 것입니다.
+
+## Reference
+
+<https://docs.microsoft.com/en-us/sql/connect/jdbc/connection-url-sample?view=sql-server-ver15>
+<https://mybatis.org/mybatis-3/configuration.html>
+<https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/create-a-stored-procedure?view=sql-server-ver15>
+<https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods>
