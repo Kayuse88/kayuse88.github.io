@@ -72,7 +72,7 @@ docker run --rm --name nuget-server -p 5555:80 --env-file baget.env -v "$(pwd)/b
 
 웹브라우저에서 도커를 실행한 PC의 IP 주소:5555를 입력하면 다음과 같은 BaGet 화면을 볼 수 있습니다.
 
-![Baget](/assets/img/posts/baget-nuget/BaGetmain.png)
+![Baget](/assets/img/posts/baget-nuget/bagetmain.png)
 
 ### Nuget 업로드 및 내려받기
 
