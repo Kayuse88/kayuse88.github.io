@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 이진 힙(Binary Heap)
-featured-img:
+featured-img: Heap_add_step2.png
 categories: 알고리즘 자료구조
 ---
 
